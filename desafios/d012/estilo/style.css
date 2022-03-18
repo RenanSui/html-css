@@ -17,6 +17,11 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background: rgba(0, 0, 0, 0.2);
+    color: #ff0000;
+}
+
 :root{
     --white: #fff;
     --dark: #181314;
@@ -29,11 +34,16 @@ html, body{
     font-family: var(--font-light);
 
     min-height: 100vh;
-    background-color: darkgray;
+    background-image: url('../imagens/pattern004.png');
+}
+
+@media all and (min-width: 1300px){
+    body{
+        margin: 0 20% 0 20%;
+    }
 }
 
 h1{
-    /* font-variant: small-caps; */
     font-family: var(--font-heavy);
     font-weight: 700;
     font-size: 55px;
@@ -73,7 +83,7 @@ header{
 
 header > h1{
     padding: 50px 0 0 0;
-    font-size: clamp(35px, 10vw,55px);
+    font-size: clamp(45px, 10vw,55px);
 }
 
 header > p{
@@ -105,22 +115,64 @@ section{
     font-weight: 400;
 }
 
+section > p {
+    padding-bottom: 2em;
+}
+
 section.normal{
     background-color: white;
     color: #000000;
+}
+section.normal > p{
+    font-size: clamp(12px, 2.5vw, 1.325em);
 }
 
 section.imagem{
     background-color: rgb(85, 85, 85);
     color: white;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.534);
+    background-size: cover;
 }
 
 section.imagem > p {
     display: inline-block;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    text-shadow: 1px 1px 1px black;
 }
 
+section#img_01{
+    background-image: url('../imagens/SSR1.png');
+}
+
+section#img_02{
+    background-image: url('../imagens/SSR5.png');
+    background-position: center center;
+    background-attachment: fixed;
+
+
+}
+
+.logo_film{
+    font-size: clamp(45px, 10vw,55px);
+    text-align: center;
+}
+
+.last_img{
+    background-image: url(../imagens/SSR0.png);
+    height: 450px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media all and (max-width: 600px){
+    .last_img{
+        background-image: url(../imagens/SSR7.png);
+        height: 894px;
+    }
+}
 
 
 
